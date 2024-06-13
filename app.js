@@ -15,14 +15,14 @@ const warriors = [
     active: false
   },
   {
-    name: 'Papa Smurf',
+    name: 'PapaSmurf',
     health: 3,
     gold: 3,
     level: 1,
     active: false
   },
   {
-    name: 'Fanta Claws',
+    name: 'FantaClaws',
     health: 9,
     gold: -2,
     level: 1,
@@ -35,7 +35,8 @@ const boss = {
   health: 10,
   maxHealth: 10,
   damage: 5,
-  level: 1
+  level: 1,
+  isAlive: true
 }
 
 function attackBoss() {
@@ -44,24 +45,23 @@ function attackBoss() {
   if (boss.health <= 0) {
     boss.health = 0
     giveGold()
+    boss.isAlive = false
   }
 
   const bossHealthElement = document.getElementById('bossHealth')
   bossHealthElement.innerText = `HP: ${boss.health}`
 }
 
-
 function attackWarriors() {
   warriors.filter((warrior) => {
-    if (warrior.active == true) {
+    if (warrior.active == true && boss.isAlive == true) {
       warrior.health -= boss.damage
     }
   })
-  console.log('Doing damage');
+  drawHealth()
 }
 
 function giveGold() {
-  // SUP ELLY
   let multiplier = Math.floor(Math.random() * 10)
   let reward = multiplier * boss.level
   warriors.filter((warrior) => {
@@ -70,16 +70,28 @@ function giveGold() {
     }
     console.log(warrior.gold)
   })
-
+  drawGold()
 }
 
 function drawGold() {
   warriors.forEach((warrior) => {
-    const warriorGoldElement = document.getElementById('gold')
-    warriorGoldElement.innerText += `${warrior.gold}`
+    const warriorElement = document.getElementById(warrior.name)
+    const warriorGoldElement = warriorElement.querySelector('.gold')
+    console.log(warriorGoldElement);
+    // @ts-ignore
+    warriorGoldElement.innerText = `${warrior.gold}`
   })
-
 }
 
+function drawHealth() {
+  warriors.forEach((warrior) => {
+    const warriorElement = document.getElementById(warrior.name)
+    const warriorHealthElement = warriorElement.querySelector('.health')
+    // @ts-ignore
+    warriorHealthElement.innerText = `${warrior.health}`
+  })
+}
 
+drawGold()
+drawHealth()
 setInterval(attackWarriors, 5000)

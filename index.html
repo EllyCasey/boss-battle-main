@@ -8,7 +8,7 @@
     integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
   <title>Document</title>
 </head>
 
@@ -17,28 +17,28 @@
   <header class="container-fluid">
     <div class="row">
       <div class="col-2">
-        <div class="row">
+        <div id="Pinky" class="row">
           <div class="col-12 d-flex justify-content-between">
-            <p>RED</p>
+            <p>Pinky</p>
             <img class="img-fluid character-card" src="pinkGummyBear.jpg" alt="A red Gummy">
           </div>
           <div class="col-6">
             <p>HP</p>
-            <p id="gold" class="gold">Gold</p>
+            <p>Gold</p>
             <p>LVL</p>
           </div>
           <div class="col-6">
-            <p>5</p>
-            <p>0</p>
+            <p class="health">5</p>
+            <p class="gold">0</p>
             <br>
             <p>1</p>
           </div>
         </div>
       </div>
       <div class="col-2">
-        <div class="row">
+        <div id="FantaClaws" class="row">
           <div class="col-12 d-flex justify-content-between">
-            <p>RED</p>
+            <p>Fanta Claws</p>
             <img class="img-fluid character-card" src="orangeGummyBear.jpg" alt="A red Gummy">
           </div>
           <div class="col-6">
@@ -47,8 +47,8 @@
             <p>LVL</p>
           </div>
           <div class="col-6">
-            <p>5</p>
-            <p>0</p>
+            <p class="health">5</p>
+            <p class="gold">0</p>
             <br>
             <p>1</p>
           </div>
@@ -57,9 +57,9 @@
         </div>
       </div>
       <div class="col-2">
-        <div class="row">
+        <div id="Gretchen" class="row">
           <div class="col-12 d-flex justify-content-between">
-            <p>RED</p>
+            <p>Gretchen</p>
             <img class="img-fluid character-card" src="greenGummyBear.jpg" alt="A red Gummy">
           </div>
           <div class="col-6">
@@ -68,8 +68,8 @@
             <p>LVL</p>
           </div>
           <div class="col-6">
-            <p>5</p>
-            <p>0</p>
+            <p class="health">5</p>
+            <p class="gold">0</p>
             <br>
             <p>1</p>
           </div>
@@ -78,10 +78,10 @@
         </div>
       </div>
       <div class="col-2">
-        <div class="row">
+        <div id="PapaSmurf" class="row">
           <div class="row">
             <div class="col-12 d-flex justify-content-between">
-              <p>RED</p>
+              <p>Papa Smurf</p>
               <img class="img-fluid character-card" src="blueGummyBear.jpg" alt="A red Gummy">
             </div>
             <div class="col-6">
@@ -90,8 +90,8 @@
               <p>LVL</p>
             </div>
             <div class="col-6">
-              <p>5</p>
-              <p>0</p>
+              <p class="health">5</p>
+              <p class="gold">0</p>
               <br>
               <p>1</p>
             </div>
@@ -106,7 +106,7 @@
       <div class="col-4">
         <div id="lordRupert" onclick="attackBoss()" class="boss-box text-center">
           <h1 id="bossHealth">HP: 10</h1>
-          <h2>Gummy Worm</h2>
+          <h2>Lord Rupert the Destroyer</h2>
           <img class="img-fluid" src="gummyWormBoss.jpg" alt="A maniacal dude">
         </div>
       </div>
