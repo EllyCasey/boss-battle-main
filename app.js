@@ -61,21 +61,22 @@ function attackWarriors() {
 }
 
 function giveGold() {
-  let multiplier = Math.floor(Math.random()* 10)
-  let reward = multiplier * boss.level  
+  // SUP ELLY
+  let multiplier = Math.floor(Math.random() * 10)
+  let reward = multiplier * boss.level
   warriors.filter((warrior) => {
     if (warrior.active == true) {
       warrior.gold += reward
     }
     console.log(warrior.gold)
   })
-  
+
 }
 
 function drawGold() {
   warriors.forEach((warrior) => {
-      const warriorGoldElement = document.getElementById('gold')
-      warriorGoldElement.innerText += `${warrior.gold}`
+    const warriorGoldElement = document.getElementById('gold')
+    warriorGoldElement.innerText += `${warrior.gold}`
   })
 
 }
