@@ -5,28 +5,32 @@ const warriors = [
     health: 5,
     gold: 0,
     level: 1,
-    active: true
+    active: true,
+    price: 0
   },
   {
     name: 'Gretchen',
     health: 8,
     gold: 0,
     level: 1,
-    active: false
+    active: false,
+    price: 30
   },
   {
     name: 'PapaSmurf',
     health: 3,
     gold: 3,
     level: 1,
-    active: false
+    active: false,
+    price: 50
   },
   {
     name: 'FantaClaws',
     health: 9,
     gold: -2,
     level: 1,
-    active: false
+    active: false,
+    price: 70
   },
 ]
 
@@ -71,6 +75,25 @@ function giveGold() {
     console.log(warrior.gold)
   })
   drawGold()
+}
+
+function buyWarrior() {
+  for (let i = 0; i < warriors.length; i++) {
+    if (warriors[0].gold >= warriors[i].price) {
+      warriors[i].active = true
+    }
+    console.log(warriors[i].active);
+  }
+}
+
+function drawWarriors() {
+  warriors.filter((warrior) => {
+    const warriorCard = document.getElementById(warrior.name)
+    console.log(warriorCard);
+    if (warrior.active == false) {
+      warriorCard.classList.add("hidden")
+    }
+  })
 }
 
 function drawGold() {
